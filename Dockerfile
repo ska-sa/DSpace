@@ -1,6 +1,6 @@
 # This image will be published as dspace/dspace
 # See https://dspace-labs.github.io/DSpace-Docker-Images/ for usage details
-# 
+#
 # This version is JDK8 compatible
 # - tomcat:8-jre8
 # - ANT 1.10.7
@@ -47,6 +47,7 @@ RUN ant init_installation update_configs update_code update_webapps update_solr_
 # Step 3 - Run tomcat
 # Create a new tomcat image that does not retain the the build directory contents
 FROM tomcat:8-jre8
+
 ENV DSPACE_INSTALL=/dspace
 COPY --from=ant_build /dspace $DSPACE_INSTALL
 EXPOSE 8080 8009
@@ -67,3 +68,8 @@ COPY dspace/src/main/docker/test/rest_web.xml $DSPACE_INSTALL/webapps/rest/WEB-I
 
 RUN sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/solr/WEB-INF/web.xml && \
     sed -i -e "s|\${dspace.dir}|$DSPACE_INSTALL|" $DSPACE_INSTALL/webapps/rest/WEB-INF/web.xml
+
+RUN rm /usr/local/tomcat/webapps/examples/servlets/index.html
+RUN rm /usr/local/tomcat/webapps/examples/jsp/snp/snoop.jsp
+RUN rm /usr/local/tomcat/webapps/examples/jsp/index.html
+RUN echo "net.ipv4.tcp_timestamps = 0" >> /etc/sysctl.conf
