@@ -46,7 +46,7 @@ select.multiple {
 }
 
 #ds-header-wrapper {
-    background-color: #1F3F5E;
+    background-color: #006da3;
     color: white;
     min-width: 950px;
 }
@@ -58,10 +58,10 @@ select.multiple {
 
 #ds-header-logo {
     float:left;
-    width: 48px;
-    height: 50px;
+    width: 232px;
+    height: 100px;
     margin-top: 10px;
-    background: url('../../images/dspace-logo-only.png');
+    background: url('../../images/sarao_logo-small.png');
     background-repeat: no-repeat;
     background-color: transparent;
     margin-right: 15px;
@@ -69,10 +69,11 @@ select.multiple {
 
 #ds-header-logo-text {
     font-size: 400%;
-    color: white;
+    color: #bdbdbf;
     line-height: 70px;
     font-weight: normal;
-    vertical-align: middle;
+    position:absolute;
+    bottom:0;
     float: left;
 }
 
@@ -203,24 +204,28 @@ select.multiple {
 #ds-body {
     float: left;
     width: 675px;
-    padding-top: 10px;
+    padding-top: 50px;
 }
 
 #ds-options-wrapper {
     float: right;
     width: 249px;
-    padding-top:10px;
+    padding-top:50px;
+
 }
 
 #ds-options {
-    padding: 0;
+    padding: 30px;
+    background-color: #338ab5;
+    border-radius: 0px;
+
 }
 
 h1.ds-option-set-head {
     margin-top: 20px;
     background-color: #f0f2f5;
     padding: 3px 10px;
-    border: 1px solid #d8e8eb;
+    border: 0px solid #d8e8eb;
     border-bottom: none;
     font-size: 108%;
 }
@@ -230,7 +235,7 @@ h1.ds-option-set-head {
 }
 
 div.ds-option-set {
-    border: 1px solid #d8e8eb;
+    border: 0px solid #d8e8eb;
     border-top: none;
 }
 
@@ -271,7 +276,7 @@ div#ds-feed-option a
 }
 
 #ds-search-form input.ds-text-field{
-    width: 169px;
+    width: 155px;
 }
 
 #ds-search-form input.ds-button-field {
@@ -641,11 +646,11 @@ span.field-help {
     border: 1px solid #9CACBA;
 }
 
-#aspect_submission_Submissions_div_submissions table tr.ds-table-header-row, 
+#aspect_submission_Submissions_div_submissions table tr.ds-table-header-row,
 #aspect_submission_Submissions_div_submissions table tr.ds-table-header-row th {
     background-color: #B6C8D9;
     border: 1px solid #9CACBA;
-    
+
 }
 
 .submission .ds-form-sublist li.ds-form-item {
